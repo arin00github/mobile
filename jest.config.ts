@@ -1,6 +1,8 @@
 import type {Config} from 'jest';
+import {defaults as tsJesPreset} from 'ts-jest/presets';
 
 const config: Config = {
+  ...tsJesPreset,
   preset: 'react-native',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFiles: ['<rootDir>/setupTest.js'],
@@ -12,7 +14,8 @@ const config: Config = {
     '^.+\\.(js)$': 'babel-jest',
     //'\\.(ts|tsx)$': 'ts-jest',
   },
-  testPathIgnorePatterns: [
+
+  transformIgnorePatterns: [
     '<rootDir>/node_modules/(?!((jest-)?react-native(-.*)?|@react-native(-community)?)|react-native-reanimated|/)',
   ],
 };

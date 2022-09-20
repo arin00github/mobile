@@ -1,11 +1,25 @@
 import React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+
 import MainScreen from '../screen/MainScreen';
 import Part1Screen from '../screen/Part1Screen';
 import Part2Screen from '../screen/Part2Screen';
 import Part3Screen from '../screen/Part3Screen';
+import {
+  createNativeStackNavigator,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 
-const Stack = createDrawerNavigator();
+type RootNavParams = {
+  Main: undefined;
+  //Post: {title: string};
+  Part1: undefined;
+  Part2: undefined;
+  Part3: undefined;
+};
+
+export type ScreeProps = NativeStackScreenProps<RootNavParams>;
+
+const Stack = createNativeStackNavigator();
 
 const RootNavigator = () => {
   return (

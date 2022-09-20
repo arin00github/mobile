@@ -7,6 +7,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
+    "test:exit": "jest --runInBand --detectOpenHandles",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "@react-navigation/native": "^6.0.12",
     "@react-navigation/native-stack": "^6.8.0",
     "@react-navigation/stack": "^6.2.3",
+    "@testing-library/react-native": "^11.1.0",
     "react": "18.0.0",
     "react-native": "0.69.5",
     "react-native-base64": "^0.2.1",
