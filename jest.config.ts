@@ -6,6 +6,7 @@ const config: Config = {
   preset: 'react-native',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFiles: ['<rootDir>/setupTest.js'],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
   moduleNameMapper: {
     '.+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$':
       'identity-obj-proxy',

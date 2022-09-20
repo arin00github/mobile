@@ -3,16 +3,27 @@ import React from 'react';
 import MainScreen from '../src/screen/MainScreen';
 
 // Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+import {render, waitFor, fireEvent} from '@testing-library/react-native';
 
 //const Child = props => <div>{props.children}</div>;
 //const Counter = props => <div>{props.count}</div>;
 
-it('MainScreen renders correctly', () => {
-  const navigate = jest.fn();
-  const element = renderer.create(<MainScreen navigation={{navigate}} />);
-  const root = element.root;
-  root.findByType('View').children.map(item => {
-    console.log(item);
+describe('MainScreen test', () => {
+  it('go to Part1 Screen', () => {
+    const navigate = jest.fn();
+    const {getByText} = render(<MainScreen navigation={{navigate}} />);
+
+    const button01 = getByText('go Part1');
+    fireEvent.press(button01);
+    expect(navigate).toHaveBeenCalledWith('Part1');
+  });
+
+  it('go to Part2 Screen', () => {
+    const navigate = jest.fn();
+    const {getByText} = render(<MainScreen navigation={{navigate}} />);
+
+    const button01 = getByText('go Part2');
+    fireEvent.press(button01);
+    expect(navigate).toHaveBeenCalledWith('Part2');
   });
 });
