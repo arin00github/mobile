@@ -8,9 +8,9 @@ const MainScreen = ({navigation}: ScreeProps) => {
       <Text>Main Screen</Text>
       <View>
         <Button
-          title="go Part1"
+          title="go Movie"
           onPress={() => {
-            navigation.navigate('Part1');
+            navigation.navigate('Movie');
           }}
         />
         <Button

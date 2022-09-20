@@ -13,9 +13,9 @@ describe('MainScreen test', () => {
     const navigate = jest.fn();
     const {getByText} = render(<MainScreen navigation={{navigate}} />);
 
-    const button01 = getByText('go Part1');
+    const button01 = getByText('go Movie');
     fireEvent.press(button01);
-    expect(navigate).toHaveBeenCalledWith('Part1');
+    expect(navigate).toHaveBeenCalledWith('Movie');
   });
 
   it('go to Part2 Screen', () => {

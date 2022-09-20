@@ -1,15 +1,15 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const Part1Screen = () => {
+const MovieScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Part1Screen</Text>
+      <Text>Movie Screen</Text>
     </View>
   );
 };
 
-export default Part1Screen;
+export default MovieScreen;
 
 const styles = StyleSheet.create({
   container: {

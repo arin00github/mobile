@@ -12,4 +12,12 @@ module.exports = {
     ],
     //'react-native-reanimated/plugin',
   ],
+  env: {
+    test: {
+      plugins: [
+        '@babel/plugin-transform-modules-commonjs',
+        '@babel/plugin-transform-runtime',
+      ],
+    },
+  },
 };
