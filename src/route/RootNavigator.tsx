@@ -29,7 +29,7 @@ const RootNavigator = () => {
 
   //useEffect(() => {}, []);
   return (
-    <Stack.Navigator initialRouteName="Main">
+    <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Main" component={MainScreen} />
       <Stack.Screen name="Movie" component={MovieScreen} />
       <Stack.Screen name="Part2" component={Part2Screen} />

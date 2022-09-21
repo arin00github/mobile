@@ -4,8 +4,8 @@ import {ScreeProps} from '../route/RootNavigator';
 import fetch from 'node-fetch';
 
 const LoginScreen = ({navigation}: ScreeProps) => {
-  const loginAPI = () => {
-    fetch('/api/login')
+  const loginAPI = async () => {
+    await fetch('https://localhost:8080/login', {method: 'POST'})
       .then(res => {
         if (res.status === 200) {
           navigation.navigate('Main');
@@ -21,7 +21,12 @@ const LoginScreen = ({navigation}: ScreeProps) => {
     <View style={styles.container}>
       <Text>Login</Text>
       <View>
-        <Button title="login" onPress={loginAPI} />
+        <Button
+          title="login"
+          onPress={() => {
+            loginAPI().then();
+          }}
+        />
       </View>
     </View>
   );

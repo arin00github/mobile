@@ -21,8 +21,9 @@ describe('Login Screen', () => {
   const {getByText} = render(<LoginScreen navigation={{navigate}} />);
   const button = getByText('login');
   beforeEach(async () => {
+    //server.printHandlers();
     server.use(
-      rest.post('/api/login', (req, res, ctx) => {
+      await rest.post('https://localhost:8080/login', (req, res, ctx) => {
         return res.once(ctx.status(200), ctx.json({message: 'login success'}));
       }),
     );

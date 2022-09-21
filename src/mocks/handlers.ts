@@ -1,22 +1,15 @@
-import React from 'react';
 import {rest} from 'msw';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+//import AsyncStorage from '@react-native-async-storage/async-storage';
+
+export function makeUrl(path: string) {
+  return `https://localhost:8080${path}`;
+}
 
 export const handlers = [
-  rest.post('/api/login', (req, res, ctx) => {
-    //AsyncStorage.setItem('is-authenticated', 'true');
+  rest.post(makeUrl('/login'), (req, res, ctx) => {
     return res(ctx.status(200));
   }),
-  rest.get('/api/logout', (req, res, ctx) => {
-    // const isAuthenticated = AsyncStorage.getItem('is-authenticated');
-    // if (!isAuthenticated) {
-    //   return res(
-    //     ctx.status(403),
-    //     ctx.json({
-    //       errorMessage: 'Not authorized',
-    //     }),
-    //   );
-    // }
+  rest.get(makeUrl('/logout'), (req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json({
