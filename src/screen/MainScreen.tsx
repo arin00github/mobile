@@ -14,15 +14,9 @@ const MainScreen = ({navigation}: ScreeProps) => {
           }}
         />
         <Button
-          title="go Part2"
+          title="go Redux"
           onPress={() => {
-            navigation.navigate('Part2');
-          }}
-        />
-        <Button
-          title="go Part3"
-          onPress={() => {
-            navigation.navigate('Part3');
+            navigation.navigate('Redux');
           }}
         />
       </View>

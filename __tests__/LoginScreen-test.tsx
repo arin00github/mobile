@@ -1,11 +1,6 @@
 import 'react-native';
 import React from 'react';
-import {
-  render,
-  fireEvent,
-  waitFor,
-  screen,
-} from '@testing-library/react-native';
+import {render, fireEvent, waitFor} from '@testing-library/react-native';
 import {server} from '../src/mock.setup';
 import {rest} from 'msw';
 import LoginScreen from '../src/screen/LoginScreen';
@@ -16,7 +11,7 @@ import LoginScreen from '../src/screen/LoginScreen';
 //   server.shutdown();
 // });
 
-describe('Login Screen', () => {
+describe('PART || LoginScreen', () => {
   const navigate = jest.fn();
   const {getByText} = render(<LoginScreen navigation={{navigate}} />);
   const button = getByText('login');

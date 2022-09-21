@@ -2,7 +2,7 @@ import React from 'react';
 
 import MainScreen from '../screen/MainScreen';
 import MovieScreen from '../screen/MovieScreen';
-import Part2Screen from '../screen/Part2Screen';
+import ReduxScreen from '../screen/ReduxScreen';
 import Part3Screen from '../screen/Part3Screen';
 import {
   createNativeStackNavigator,
@@ -16,7 +16,7 @@ type RootNavParams = {
   Login: undefined;
   //Post: {title: string};
   Movie: undefined;
-  Part2: undefined;
+  Redux: undefined;
   Part3: undefined;
 };
 
@@ -32,7 +32,7 @@ const RootNavigator = () => {
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Main" component={MainScreen} />
       <Stack.Screen name="Movie" component={MovieScreen} />
-      <Stack.Screen name="Part2" component={Part2Screen} />
+      <Stack.Screen name="Redux" component={ReduxScreen} />
       <Stack.Screen name="Part3" component={Part3Screen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       {/* {authorized ? (
