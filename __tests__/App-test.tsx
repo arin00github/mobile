@@ -11,6 +11,6 @@ describe('AppStack', () => {
   it('renders the correct screen', async () => {
     const {getByText} = render(<App />);
 
-    await waitFor(() => getByText('Main Screen'));
+    await waitFor(() => getByText('login'));
   });
 });

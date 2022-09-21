@@ -20,8 +20,8 @@ describe('Login Screen', () => {
   const navigate = jest.fn();
   const {getByText} = render(<LoginScreen navigation={{navigate}} />);
   const button = getByText('login');
+
   beforeEach(async () => {
-    //server.printHandlers();
     server.use(
       await rest.post('https://localhost:8080/login', (req, res, ctx) => {
         return res.once(ctx.status(200), ctx.json({message: 'login success'}));
@@ -31,8 +31,7 @@ describe('Login Screen', () => {
 
   it('로그인버튼 클릭 시 Main 스크린으로 이동', async () => {
     fireEvent.press(button);
-    expect(navigate).toHaveBeenCalledWith('Main');
-    await waitFor(() => screen.getByText('Main screen'));
+    await waitFor(() => expect(navigate).toHaveBeenCalledWith('Main'));
 
     //await waitFor(() => screen.getByText('Main screen'));
   });
